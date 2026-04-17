@@ -1,0 +1,25 @@
+spring:
+  config:
+    import: optional:file:.env[.properties],optional:file:../.env[.properties]
+  data:
+    mongodb:
+      uri: mongodb+srv://shamalkawya2004_db_user:CiviSczElJNDbhmR@cluster0.rohgfuj.mongodb.net/PAF_1?retryWrites=true&w=majority
+  devtools:
+    restart:
+      enabled: false
+
+server:
+  port: 8081
+
+application:
+  security:
+    jwt:
+      secret-key: smart_campus_operations_hub_123456789
+      expiration: 86400000
+    oauth:
+      google-client-id: ${GOOGLE_CLIENT_ID:}
+
+file:
+  upload-dir: uploads/tickets
+  max-attachments-per-ticket: 3
+  max-file-size: 5242880
